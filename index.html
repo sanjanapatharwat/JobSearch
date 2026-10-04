@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Search App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="welcome">Welcome to the Job Search App!</h1>
+
+    <div class="search-panel">
+        <input type="text" id="search-input" placeholder="Enter job title or keyword">
+        <input type="text" id="location-input" placeholder="Enter country or city">
+
+        <div class="filter-panel">
+            <label class="filter-control">
+                <span>Job type</span>
+                <select id="type-filter">
+                    <option value="all">All types</option>
+                    <option value="full-time">Full-time</option>
+                    <option value="part-time">Part-time</option>
+                    <option value="contract">Contract</option>
+                    <option value="internship">Internship</option>
+                </select>
+            </label>
+            <label class="filter-control">
+                <span>Remote</span>
+                <select id="remote-filter">
+                    <option value="all">Any</option>
+                    <option value="remote">Remote only</option>
+                    <option value="onsite">On-site / Hybrid</option>
+                </select>
+            </label>
+            <label class="filter-control">
+                <span>Posted</span>
+                <select id="date-filter">
+                    <option value="all">All time</option>
+                    <option value="24h">Last 24h</option>
+                    <option value="7d">Last 7 days</option>
+                    <option value="30d">Last 30 days</option>
+                </select>
+            </label>
+            <label class="filter-control">
+                <span>Salary</span>
+                <select id="salary-filter">
+                    <option value="all">Any salary</option>
+                    <option value="disclosed">Disclosed only</option>
+                    <option value="undisclosed">Undisclosed only</option>
+                </select>
+            </label>
+            <label class="filter-control">
+                <span>Experience</span>
+                <select id="experience-filter">
+                    <option value="all">Any level</option>
+                    <option value="entry">Entry level</option>
+                    <option value="mid">Mid level</option>
+                    <option value="senior">Senior level</option>
+                </select>
+            </label>
+            <label class="filter-control">
+                <span>Min Salary</span>
+                <input id="min-salary-input" type="number" placeholder="0" min="0">
+            </label>
+            <label class="filter-control">
+                <span>Company</span>
+                <input id="company-input" type="text" placeholder="Company name">
+            </label>
+            <label class="filter-control">
+                <span>Apply Type</span>
+                <select id="direct-filter">
+                    <option value="all">Any</option>
+                    <option value="direct">Direct apply only</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="search-actions">
+            <button id="search-button" onClick="fetchJobDetails()">Search</button>
+            <button id="clear-filters" type="button">Clear filters</button>
+        </div>
+    </div>
+
+    <div id="results"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
